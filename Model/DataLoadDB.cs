@@ -1,8 +1,8 @@
 using System.Text.Json;
 
-public class DataLoad : IDataLoad {
+public class DataLoadDB : IDataLoad {
 
-    public DataLoad(){
+    public DataLoadDB(){
         
     }
 
