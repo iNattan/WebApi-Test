@@ -1,23 +1,9 @@
 using System.Text.Json;
 
-public class DataLoad : IDataLoad {
+public class DataLoad : DataLoadBase {
 
-    public DataLoad(){
-        
-    }
-
-    public List<Cidade> Cidades(){
-        return Load<Cidade>(".\\Files\\cities.json");
-    }
-
-    public List<Estado> Estados(){
-        return Load<Estado>(".\\Files\\states.json");
-    }
-
-    public List<Pais> Paises(){
-        return Load<Pais>(".\\Files\\countries.json");
-    }
-    public List<T> Load<T>(string local){
+    public override List<T> Load<T>(string local){
+        local = local + ".json";
         if(!File.Exists(local))
             throw new ArgumentException(local);
         

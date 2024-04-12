@@ -1,28 +1,20 @@
-using System.Text.Json;
+using CsvHelper;
+using System;
+using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
 
-public class DataLoadDB : IDataLoad {
+public class DataLoadDB : DataLoadBase {
 
-    public DataLoadDB(){
-        
-    }
-
-    public List<Cidade> Cidades(){
-        return Load<Cidade>(".\\Files\\cities.json");
-    }
-
-    public List<Estado> Estados(){
-        return Load<Estado>(".\\Files\\states.json");
-    }
-
-    public List<Pais> Paises(){
-        return Load<Pais>(".\\Files\\countries.json");
-    }
-    public List<T> Load<T>(string local){
-        if(!File.Exists(local))
+    public override List<T> Load<T>(string local){
+        local = local + ".csv";
+        if (!File.Exists(local))
             throw new ArgumentException(local);
         
-        string json = File.ReadAllText(local);
-    
-        return JsonSerializer.Deserialize<List<T>>(json);    
+        using (var reader = new StreamReader(local))
+        using (var csv = new CsvReader(reader, CultureInfo.InvariantCulture))
+        {
+            return csv.GetRecords<T>().ToList();
+        }
     }
 }

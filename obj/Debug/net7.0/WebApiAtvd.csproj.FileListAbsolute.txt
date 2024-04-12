@@ -34,3 +34,4 @@ C:\Users\natan\OneDrive\Documentos\Faculdade\7° Período\Tec Avancadas de Soft\
 C:\Users\natan\OneDrive\Documentos\Faculdade\7° Período\Tec Avancadas de Soft\WebApiAtvd\obj\Debug\net7.0\WebApiAtvd.pdb
 C:\Users\natan\OneDrive\Documentos\Faculdade\7° Período\Tec Avancadas de Soft\WebApiAtvd\obj\Debug\net7.0\WebApiAtvd.genruntimeconfig.cache
 C:\Users\natan\OneDrive\Documentos\Faculdade\7° Período\Tec Avancadas de Soft\WebApiAtvd\obj\Debug\net7.0\ref\WebApiAtvd.dll
+C:\Users\natan\OneDrive\Documentos\Faculdade\7° Período\Tec Avancadas de Soft\WebApiAtvd\bin\Debug\net7.0\CsvHelper.dll
